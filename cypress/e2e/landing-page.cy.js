@@ -83,9 +83,13 @@ describe('visits turing cafe', () => {
   })
   it('Should add a new reservation',() => {
     cy.get('#form-name').type('asher')
+    .get('#form-name').should('have.value', 'asher')
     .get('#form-date').type('5/13')
+    .get('#form-date').should('have.value', '5/13')
     .get('#form-time').type('7:30')
+    .get('#form-time').should('have.value', '7:30')
     .get('#form-guests').type('2')
+    .get('#form-guests').should('have.value', '2')
     .get('form button').click()
 
     .get('article').last().get('h2').contains('asher')
