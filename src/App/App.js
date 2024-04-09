@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import Card from '../Card/Card'
+import { useState, useEffect } from 'react-dom'
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
       <div className='resy-form'>
       </div>
       <div className='resy-container'>
+        <Card />
       </div>
     </div>
   );
