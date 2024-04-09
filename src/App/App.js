@@ -16,12 +16,16 @@ function App() {
       }
     })
   }, [])
-  
+
+  const addRes = (newRes) => {
+    setReservations([...reservations, newRes])
+  }
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
-        <ResForm />
+        <ResForm addRes={addRes}/>
       </div>
       <div className='resy-container'>
         <Reservations reservations={reservations}/>
