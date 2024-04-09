@@ -4,7 +4,7 @@ import React from 'react';
 function Card({id, name, date, time, guests}) {
     return (
         <div className='card-wrapper'>
-            <article>
+            <article className='card' id={id}>
                 <h2>{name}</h2>
                 <p>{time}</p>
                 <p>{date}</p>

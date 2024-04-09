@@ -1,6 +1,6 @@
 .res-card-wrapper {
     display: grid;
-    padding: 50px 100px;
-    grid-template-columns: auto;
-    gap: 60px;
+    padding: 50px 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
