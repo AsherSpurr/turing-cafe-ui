@@ -69,7 +69,26 @@ describe('visits turing cafe', () => {
     })
     cy.visit('http://localhost:3000')
   })
-  it('should show a heading and form with 4 inputs', () => {
+  it('should show a heading and form with 4 inputs and one button', () => {
     cy.get('h1').contains('Turing Cafe Reservations')
+    .get('form').children().should('have.length', '5')
+    .get('form input').should('have.prop', 'name')
+    .get('form input').last().should('have.id', 'form-guests')
+  })
+  it('Should show reservations',() => {
+    cy.get('section').within(() => {
+      cy.get('article').first().should('have.id', '1')
+      .get('article').last().should('have.id', '9')
+    })
+  })
+  it('Should add a new reservation',() => {
+    cy.get('#form-name').type('asher')
+    .get('#form-date').type('5/13')
+    .get('#form-time').type('7:30')
+    .get('#form-guests').type('2')
+    .get('form button').click()
+
+    .get('article').last().get('h2').contains('asher')
+    .get('article').last().children().last().contains('2')
   })
 })
