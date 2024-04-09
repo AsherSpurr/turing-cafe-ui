@@ -1,7 +1,7 @@
 import './Card.css';
 import React from 'react';
 
-function Card({reservations}) {
+function Card() {
     return (
         <div className='card-wrapper'>
         </div>

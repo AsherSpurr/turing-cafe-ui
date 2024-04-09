@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import Card from '../Card/Card'
+import Reservations from '../Reservations/Reservations'
 import { fetchReservations } from '../apiCalls';
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
     fetchReservations()
     .then(data => {
       if(data) {
-        console.log(data)
         setReservations(data)
       }
     })
@@ -21,7 +20,7 @@ function App() {
       <div className='resy-form'>
       </div>
       <div className='resy-container'>
-        <Card reservations={reservations}/>
+        <Reservations reservations={reservations}/>
       </div>
     </div>
   );
