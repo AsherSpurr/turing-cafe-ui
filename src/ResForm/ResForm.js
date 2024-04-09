@@ -8,8 +8,9 @@ function ResForm({ addRes }) {
     const [guests, setGuests] = useState('')
 
     const createRes = (e) => {
-        e.preventdefault()
+        e.preventDefault()
         const newRes = {
+            id: Date.now(),
             name: name,
             date: date,
             time: time,
@@ -29,11 +30,11 @@ function ResForm({ addRes }) {
     return (
         <div>
             <form>
-                <input type='text' placeholder='Name' onChange={(e) => setName(e.target.value)}></input>
-                <input type='text' placeholder='Date(mm/dd)' onChange={(e) => setDate(e.target.value)}></input>
-                <input type='text' placeholder='Time' onChange={(e) => setTime(e.target.value)}></input>
-                <input type='text' placeholder='Number of guests' onChange={(e) => setGuests(e.target.value)}></input>
-                <button type='submit' onClick={(e) => createRes(e)}>Make Reservation</button>
+                <input type='text' placeholder='Name' name='name' value={name} onChange={(e) => setName(e.target.value)}></input>
+                <input type='text' placeholder='Date(mm/dd)' name='date' value={date} onChange={(e) => setDate(e.target.value)}></input>
+                <input type='text' placeholder='Time' name='time' value={time} onChange={(e) => setTime(e.target.value)}></input>
+                <input type='text' placeholder='Number of guests' name='guests' value={guests} onChange={(e) => setGuests(e.target.value)}></input>
+                <button type='submit' value='submit' onClick={(e) => createRes(e)}>Make Reservation</button>
             </form>
         </div>
     )

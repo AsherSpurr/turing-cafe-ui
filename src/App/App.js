@@ -18,8 +18,11 @@ function App() {
   }, [])
 
   const addRes = (newRes) => {
+    console.log(newRes)
     setReservations([...reservations, newRes])
   }
+
+  console.log(reservations)
 
   return (
     <div className="App">
