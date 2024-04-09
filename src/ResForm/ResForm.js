@@ -14,7 +14,7 @@ function ResForm({ addRes }) {
             name: name,
             date: date,
             time: time,
-            number: guests
+            number: Number(guests)
         }
         addRes(newRes)
         resetInputs()
