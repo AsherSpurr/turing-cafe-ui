@@ -95,4 +95,8 @@ describe('visits turing cafe', () => {
     .get('article').last().get('h2').contains('asher')
     .get('article').last().children().last().contains('2')
   })
+  it('Should show user flow left to right through inputs',() => {
+    cy.get('#form-name').next().should('have.id', 'form-date').next().should('have.id', 'form-time')
+    .next().should('have.id', 'form-guests')
+  })
 })
