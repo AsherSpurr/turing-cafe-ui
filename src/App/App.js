@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Reservations from '../Reservations/Reservations'
-import { fetchReservations } from '../apiCalls';
+import { fetchReservations, postReservation } from '../apiCalls';
 import ResForm from '../ResForm/ResForm';
 
 function App() {
@@ -15,11 +15,14 @@ function App() {
         setReservations(data)
       }
     })
+
   }, [])
 
-  const addRes = (newRes) => {
-    console.log(newRes)
-    setReservations([...reservations, newRes])
+  const postRes = (newRes) => {
+    postReservation(newRes)
+    .then(data => {
+      setReservations([...reservations, data])
+    })
   }
 
   console.log(reservations)
@@ -28,7 +31,7 @@ function App() {
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
-        <ResForm addRes={addRes}/>
+        <ResForm postRes={postRes}/>
       </div>
       <div className='resy-container'>
         <Reservations reservations={reservations}/>

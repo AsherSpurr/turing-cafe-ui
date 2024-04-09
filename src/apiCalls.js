@@ -12,4 +12,17 @@ function fetchReservations() {
     })
 }
 
-export {fetchReservations}
+function postReservation(newRes) {
+    return fetch('http://localhost:3001/api/v1/reservations', {
+        method: 'POST', 
+        body: JSON.stringify(newRes),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+    .then(response => {
+        return response.json()
+    })
+}
+
+export {fetchReservations, postReservation}

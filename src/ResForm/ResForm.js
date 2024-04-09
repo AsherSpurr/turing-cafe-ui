@@ -1,7 +1,7 @@
 import './ResForm.css'
 import { useState } from 'react';
 
-function ResForm({ addRes }) {
+function ResForm({ postRes }) {
     const [name, setName] = useState('')
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
@@ -16,7 +16,7 @@ function ResForm({ addRes }) {
             time: time,
             number: Number(guests)
         }
-        addRes(newRes)
+        postRes(newRes)
         resetInputs()
     }
 
