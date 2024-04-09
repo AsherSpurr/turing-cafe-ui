@@ -9,6 +9,7 @@ function Card({id, name, date, time, guests}) {
                 <p>{time} pm</p>
                 <p>{date}</p>
                 <p>Number of guests: {guests}</p>
+                <button className='card-button'>Cancel</button>
             </article>
 
         </div>

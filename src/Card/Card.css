@@ -6,3 +6,11 @@
     border: 3px solid teal;
     border-radius: 5px;
 }
+
+.card-button {
+    background-color: teal;
+    border: none;
+    width: 100%;
+    height: 30px;
+    color: white;
+}
