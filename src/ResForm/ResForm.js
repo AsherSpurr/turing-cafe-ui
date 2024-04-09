@@ -16,6 +16,14 @@ function ResForm({ addRes }) {
             number: guests
         }
         addRes(newRes)
+        resetInputs()
+    }
+
+    const resetInputs = () => {
+        setName('')
+        setDate('')
+        setTime('')
+        setGuests('')
     }
 
     return (
