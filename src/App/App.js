@@ -10,6 +10,7 @@ function App() {
     fetchReservations()
     .then(data => {
       if(data) {
+        console.log(data)
         setReservations(data)
       }
     })
