@@ -6,7 +6,7 @@ function Card({id, name, date, time, guests}) {
         <div className='card-wrapper'>
             <article className='card' id={id}>
                 <h2>{name}</h2>
-                <p>{time}</p>
+                <p>{time} pm</p>
                 <p>{date}</p>
                 <p>Number of guests: {guests}</p>
             </article>
