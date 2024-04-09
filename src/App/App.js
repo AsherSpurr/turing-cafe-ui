@@ -1,10 +1,20 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card'
-import { useState, useEffect } from 'react-dom'
+import { fetchReservations } from '../apiCalls';
 
 function App() {
   const [reservations, setReservations] = useState([])
+
+  useEffect(() => {
+    fetchReservations()
+    .then(data => {
+      if(data) {
+        console.log(data)
+        setReservations(data)
+      }
+    })
+  }, [])
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
