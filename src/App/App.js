@@ -16,6 +16,7 @@ function App() {
       }
     })
   }, [])
+  
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
